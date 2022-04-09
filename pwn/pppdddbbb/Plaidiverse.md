@@ -1,0 +1,1 @@
+The Plaidiverse will be stored in a highly scalable, enterprise-grade database, making use of the latest in Lean Seamless Mesh technology! Check back next year for version 2.0, which will include additional features such as NFT minting and data durability! pppdddbbb.chal.pwni.ng:1337
