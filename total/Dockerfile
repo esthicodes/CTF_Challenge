@@ -1,12 +1,8 @@
-FROM node:16.9.0
+FROM ubuntu:20.04
 
-WORKDIR /amongst
-ADD . .
-
-# Need to yarn install in order to have esbuild
-RUN yarn install --immutable
-
-RUN yarn build
-RUN yarn build-client
-WORKDIR /amongst/packages/server
-CMD ["yarn", "start"]
+RUN apt-get update && apt-get install -y xinetd
+RUN adduser --no-create-home --disabled-password --gecos "" engine
+WORKDIR /engine
+COPY engine .
+COPY xinetd.conf /etc/xinetd.d/engine
+CMD ["/usr/sbin/xinetd", "-dontfork"]
